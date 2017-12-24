@@ -24,7 +24,7 @@
         ZLogger.init(true)
      }
         
-  或者...
+  //或者...
   
       ZLogger.e("测试")
       ZLogger.e("TAG", "测试 " + e.message)
