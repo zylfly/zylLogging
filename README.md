@@ -24,12 +24,8 @@
         ZLogger.init(true)
      }
      ZLogger.e("测试")
-        
-  //或者...
-  
-      
-      ZLogger.e("TAG", "测试 " + e.message)
-    
+    ZLogger.e("TAG", "测试 " + e.message) 
+ 
  ### 4、在OKhttp请求封装时候使用：
  
     .addInterceptor(LoggingInterceptor
