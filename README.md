@@ -21,9 +21,12 @@
   
     override fun onCreate() {
         super.onCreate()
-        ZLogger.init(true)}
+        ZLogger.init(true)
+     }
         
-      ZLogger.e("测试")
+  或者...
+  
+      ZLogger.e("测试")
       ZLogger.e("TAG", "测试 " + e.message)
     
  ### 4、在OKhttp请求封装时候使用：
