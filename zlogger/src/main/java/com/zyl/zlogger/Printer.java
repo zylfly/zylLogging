@@ -81,13 +81,14 @@ class Printer {
     }
 
     static void printFileRequest(LoggingInterceptor.Builder builder, Request request) {
+        String requestBody = LINE_SEPARATOR + BODY_TAG + LINE_SEPARATOR + bodyToString(request);
         String tag = builder.getTag(true);
         if (builder.getLogger() == null)
             I.log(builder.getType(), tag, REQUEST_UP_LINE);
         logLines(builder.getType(), tag, new String[]{URL_TAG + request.url()}, builder.getLogger(), false);
         logLines(builder.getType(), tag, getRequest(request, builder.getLevel()), builder.getLogger(), true);
         if (builder.getLevel() == Level.BASIC || builder.getLevel() == Level.BODY) {
-            logLines(builder.getType(), tag, OMITTED_REQUEST, builder.getLogger(), true);
+            logLines(builder.getType(), tag, requestBody.split(LINE_SEPARATOR), builder.getLogger(), true);
         }
         if (builder.getLogger() == null)
             I.log(builder.getType(), tag, END_LINE);
