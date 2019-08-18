@@ -3,6 +3,7 @@ package com.zyl.zlogger;
 import android.text.TextUtils;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -74,7 +75,8 @@ public class LoggingInterceptor implements Interceptor {
         long st = System.nanoTime();
         Response response = chain.proceed(request);
 
-        List<String> segmentList = ((Request) request.tag()).url().encodedPathSegments();
+//        List<String> segmentList = ((Request) request.tag()).url().encodedPathSegments();
+        List<String> segmentList = new ArrayList<>();
         long chainMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - st);
         String header = response.headers().toString();
         int code = response.code();
