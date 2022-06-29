@@ -3,7 +3,7 @@
 
 ### 1、在自己项目中添加本项目依赖：
 
-    compile 'com.github.zylRookie:zylLogging:1.0.1'
+    compile 'com.github.zylfly:zylLogging:1.0.1'
 
 ### 2、在根目录中添加：
 
